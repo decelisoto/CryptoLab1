@@ -20,7 +20,7 @@ path2 = os.path.abspath(fname2)
 print('Copying', path, 'to', path2)
 
 # Set the block size (characters instead of bytes)
-blocksize = 16
+blocksize = 100
 # Total character counter
 totalsize = 0
 

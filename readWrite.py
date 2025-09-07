@@ -17,7 +17,7 @@ path2 = os.path.abspath(fname2)
 # print message to user
 print('copying ', path, 'to ', path2)
 # set the blocksize
-blocksize = 16
+blocksize = 100
 # set the totalsize counter
 totalsize = 0
 # create a mutable array to hold the bytes
