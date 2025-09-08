@@ -14,7 +14,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 IN_PATH   = "infile.txt"
 ENC_PATH  = "outfile.txt"     # will be overwritten with CIPHERTEXT
 DEC_PATH  = "restored.txt"
-MODE      = "CBC"             # set to "ECB" or "CBC"
+MODE      = "ECB"             # set to "ECB" or "CBC"
 KEY_PW    = b"password"       # password used to derive KEY (PBKDF2)
 IV_PW     = b"hello"          # password used to derive IV  (PBKDF2)
 SHOW_SECRETS = False          # set True if you want to print key/iv hex (for lab only)
