@@ -1,6 +1,5 @@
 # task3.py
 # Encrypt infile.txt -> outfile.txt, then decrypt outfile.txt -> restored.txt.
-# Verbose terminal output for screenshots (mode, salt, sizes, block-by-block ciphertext).
 # Change MODE to "ECB" or "CBC" and run again for separate screenshots.
 
 import os
@@ -11,7 +10,7 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 
 # ===== Config (edit if needed) =====
-IN_PATH   = "infile.txt"
+IN_PATH   = "infile_repeat.txt"
 ENC_PATH  = "outfile.txt"     # will be overwritten with CIPHERTEXT
 DEC_PATH  = "restored.txt"
 MODE      = "ECB"             # set to "ECB" or "CBC"
@@ -109,7 +108,6 @@ def decrypt_file(in_path: str, out_path: str):
         decryptor = cipher.decryptor()
         unpadder  = padding.PKCS7(128).unpadder()
 
-        # For block-by-block ciphertext printing, read the *rest* of file to a buffer once (lab-scale).
         ciphertext = fin.read()
         # Print blocks so ECB/CBC differences are obvious:
         _print_blocks(f"Ciphertext blocks ({enc_mode}):", ciphertext)
